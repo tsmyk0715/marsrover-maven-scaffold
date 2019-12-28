@@ -92,6 +92,8 @@ public class Rovers {
             case "W":
                 this.direction = "S";
                 break;
+            default:
+                break;
         }
         return getPostation();
     }
@@ -113,6 +115,8 @@ public class Rovers {
                 break;
             case "W":
                 this.direction = "N";
+                break;
+            default:
                 break;
         }
         return getPostation();
