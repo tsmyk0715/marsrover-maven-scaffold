@@ -58,7 +58,7 @@ public class MarsRoverTest {
         Rovers rovers = new Rovers();
         rovers.land(area, 10, 5, "E");
         expectedException.expect(RuntimeException.class);
-        expectedException.expectMessage("已超出范围，不能再继续往左移动");
+        expectedException.expectMessage("已超出范围，不能再继续移动");
         rovers.moveX();
     }
 
@@ -71,7 +71,7 @@ public class MarsRoverTest {
         Rovers rovers = new Rovers();
         rovers.land(area, 10, 10, "E");
         expectedException.expect(RuntimeException.class);
-        expectedException.expectMessage("已超出范围，不能再继续往左移动");
+        expectedException.expectMessage("已超出范围，不能再继续移动");
         rovers.moveY();
     }
 
