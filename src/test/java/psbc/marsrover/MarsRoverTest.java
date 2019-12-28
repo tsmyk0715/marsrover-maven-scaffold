@@ -1,4 +1,4 @@
-package psbc.marsRover;
+package psbc.marsrover;
 
 
 import org.junit.Assert;

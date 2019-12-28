@@ -1,4 +1,4 @@
-package psbc.marsRover;
+package psbc.marsrover;
 
 public class Rovers {
 
