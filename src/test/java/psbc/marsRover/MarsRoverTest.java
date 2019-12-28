@@ -6,8 +6,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+/**
+ * 单元测试
+ */
 public class MarsRoverTest {
 
+    /**
+     * 测出初始化
+     */
     @Test
     public void testGetPostationOverRange(){
         Area area = new Area(10, 10);
@@ -17,6 +23,9 @@ public class MarsRoverTest {
         rovers.land(area, 11, 11, "E");
     }
 
+    /**
+     * 获取当前位置
+     */
     @Test
     public void testGetPostation(){
         Area area = new Area(10, 10);
@@ -26,6 +35,9 @@ public class MarsRoverTest {
         Assert.assertEquals("55E", a);
     }
 
+    /**
+     * X轴方向移动
+     */
     @Test
     public void testMoveX(){
         Area area = new Area(10, 10);
@@ -36,6 +48,10 @@ public class MarsRoverTest {
         Assert.assertEquals("65E", a);
     }
 
+    /**
+     *
+     * Y轴方向移动
+     */
     @Test
     public void testMoveY(){
         Area area = new Area(10, 10);
@@ -46,6 +62,9 @@ public class MarsRoverTest {
         Assert.assertEquals("56E", a);
     }
 
+    /**
+     * 异常
+     */
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
@@ -75,6 +94,9 @@ public class MarsRoverTest {
         rovers.moveY();
     }
 
+    /**
+     * 左转
+     */
     @Test
     public void testTurnLeft(){
         Area area = new Area(10, 10);
