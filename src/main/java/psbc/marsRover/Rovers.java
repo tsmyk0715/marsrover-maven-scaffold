@@ -2,12 +2,24 @@ package psbc.marsRover;
 
 public class Rovers {
 
+    /**
+     * 初始化区域
+     */
     private Area area;
 
+    /**
+    * X轴的位置
+    */
     private int positionX;
 
+    /**
+     * Y轴的位置
+     */
     private int positionY;
 
+    /**
+     * 朝向
+     */
     private String direction;
 
     /**
@@ -26,6 +38,10 @@ public class Rovers {
         this.direction = direction;
     }
 
+    /**
+     * 获取当前位置
+     * @return 当前位置
+     */
     public String getPostation() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.positionX);
@@ -34,22 +50,34 @@ public class Rovers {
         return sb.toString();
     }
 
+    /**
+     * 向左移动
+     * @return
+     */
     public String moveX() {
         if (this.positionX + 1 > area.getX()) {
-            throw new RuntimeException("已超出范围，不能再继续往左移动");
+            throw new RuntimeException("已超出范围，不能再继续移动");
         }
         this.positionX += 1;
         return getPostation();
     }
 
+    /**
+     * 向右移动
+     * @return
+     */
     public String moveY() {
         if (this.positionY + 1 > area.getY()) {
-            throw new RuntimeException("已超出范围，不能再继续往左移动");
+            throw new RuntimeException("已超出范围，不能再继续移动");
         }
         this.positionY += 1;
         return getPostation();
     }
 
+    /**
+     * 左转
+     * @return 朝向
+     */
     public String turnLeft() {
         switch (direction) {
             case "N":
@@ -63,6 +91,28 @@ public class Rovers {
                 break;
             case "W":
                 this.direction = "S";
+                break;
+        }
+        return getPostation();
+    }
+
+    /**
+     * 右转
+     * @return 朝向
+     */
+    public String turnRighe() {
+        switch (direction) {
+            case "N":
+                this.direction = "E";
+                break;
+            case "S":
+                this.direction = "W";
+                break;
+            case "E":
+                this.direction = "S";
+                break;
+            case "W":
+                this.direction = "N";
                 break;
         }
         return getPostation();
